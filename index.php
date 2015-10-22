@@ -2,13 +2,41 @@
 <html lang="ja">
 <head>
 	<meta charset="UTF-8">
-	<title>ページタイトル</title>
+	<title><?php bloginfo('nama'); ?><?php wp_title(); ?></title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="<?php echo get_stylesheet_uri(); ?>">
+	<link href='https://fonts.googleapis.com/css?family=Acme' rel='stylesheet' type='text/css'>
+
+<?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
+
+<header>
+<div class="siteinfo">
+<div class="container">
+<h1>
+<a href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a>
+</h1>
+<p><?php bloginfo('description'); ?></p>
+</div>
+</div>
+</header>
 	
 <div class="container">
+
+	<?php if(is_category()): ?>
+		<h1 class="archive-title">
+		<i class="fa fa-folder-open"></i>
+		「<?php single_cat_title(); ?>」に関する記事
+		</h1>
+	<?php endif; ?>
+
+	<?php if(is_month()): ?>
+		<h1 class="archive-title">
+		<i class="fa fa-clock-o"></i>
+		<?php echo get_the_date('Y年n月'); ?>に投稿した記事
+		</h1>
+	<?php endif; ?>
 
 	<?php if(have_posts()): while(have_posts()): the_post(); ?>
 	
@@ -67,7 +95,26 @@
 	
 	<?php endif; ?>
 
+<div class="blogmenu">
+<ul>
+<?php dynamic_sidebar(); ?>
+
+<li class="widget">
+	<ul>
+	<li><a href="<?php bloginfo('rss2_url'); ?>">RSS</a></li>
+	</ul>
+	</li>
+	</ul>
+</div>
+
 </div><!-- container -->
 
+<footer>
+<div class="container">
+<small>Copyright &copy; <?php bloginfo('name'); ?></small>
+</div>
+</footer>
+
+<?php wp_footer(); ?>
 </body>
 </html>
