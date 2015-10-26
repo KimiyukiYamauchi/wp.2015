@@ -31,7 +31,7 @@ article h1 {
 	clear: both;
 }
 
-article a {
+article h1 a {
 	color: #000000;
 	text-decoration: none;
 }
@@ -48,6 +48,10 @@ article a {
 }
 
 .postinfo .postcat {
+	margin-left: 20px;
+}
+
+.postinfo .postcom {
 	margin-left: 20px;
 }
 
@@ -204,4 +208,69 @@ article img {
 	padding: 15px;
 	background-color: #4a5f7e;
 	color: #ffffff;
+}
+
+/* コメント投稿フォーム */
+#respond p {
+	margin-top: 0;
+	margin-bottom: 20px;
+	font-size: 12px;
+}
+
+#respond label {
+	font-size: 14px;
+}
+
+#respond input,
+#respond textarea {
+	width: 100%;
+	padding: 5px;
+}
+
+#respond input[type="submit"] {
+	width: 200px;
+	padding: 10px;
+	border: none;
+	background-color: #e6cc1c;
+	cursor: pointer;
+}
+
+#respond input[type="submit"]:hover {
+	background-color: #f5e04f;
+}
+
+#respond .required {
+	color: #ff0000;
+}
+
+/* コメント */
+#comments footer {
+	background: none;
+	margin: 0;
+	color: #000000;
+	font-size: 12px;
+}
+
+#comments footer a {
+	color: #000000;
+}
+
+#comments footer div {
+	display: inline;
+}
+
+#comments ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+#comments article {
+	border: dotted 1px #aaaaaa;
+	margin-bottom: 10px;
+	padding: 10px 20px 20px 20px;
+}
+
+#comments .comment-content {
+	margin-left: 30px;
 }
