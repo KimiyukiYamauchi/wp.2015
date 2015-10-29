@@ -309,3 +309,47 @@ article img {
 #comments .comment-content {
 	margin-left: 30px;
 }
+
+/* お問い合わせホーム */
+.wpcf7 input,
+.wpcf7 textarea {
+	width: 100%;
+	padding: 5px;
+}
+
+.wpcf7 input[type="submit"] {
+	width: 200px;
+	padding: 10px;
+	border: none;
+	background-color: #e6cc1c;
+	cursor: pointer;
+}
+
+.wpcf7 input[type="submit"]:hover {
+	background-color: #f5e04f;
+}
+
+/* メディアクエリの設定 */
+@media (min-width: 768px){
+
+	/* 2段組 */
+	.container {
+		max-width: 1000px;
+		overflow: hidden;
+	}
+
+	.contents {
+		width: 65%;
+		float: left;
+	}
+
+	.blogmenu {
+		width: 30%;
+		float: right;
+	}
+
+	/* ナビゲーションメニュー */
+	nav li {
+		margin-right: 40px;
+	}
+}
